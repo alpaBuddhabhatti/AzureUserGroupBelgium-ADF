@@ -1,0 +1,19 @@
+{
+	"name": "LS_ABLB_IN",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "https://azdev-kv-demo.vault.azure.net/secrets/ABLB-Connectionstring",
+			"accountKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_KV",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "input-ablb-con"
+			}
+		}
+	}
+}
