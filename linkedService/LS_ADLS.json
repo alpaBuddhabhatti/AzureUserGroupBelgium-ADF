@@ -1,20 +1,20 @@
 {
 	"name": "LS_ADLS",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://azdev-kv-demo.vault.azure.net/secrets/ADL-Connectionstring",
+			"url": "https://azdev-kv-demo.vault.azure.net/secrets/ADL-CONN",
 			"accountKey": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
 					"referenceName": "LS_KV",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "adl-con",
+				"secretName": "ADL-CONN",
 				"secretVersion": ""
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
