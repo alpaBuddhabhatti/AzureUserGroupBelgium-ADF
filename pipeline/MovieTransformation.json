@@ -72,7 +72,13 @@
 				"inputs": [
 					{
 						"referenceName": "DS_ADL_FINAL",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@pipeline().parameters.FileName",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
