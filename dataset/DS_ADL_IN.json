@@ -1,5 +1,5 @@
 {
-	"name": "DS_ABLB_IN",
+	"name": "DS_ADL_IN",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_ABLB_IN",
