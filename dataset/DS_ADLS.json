@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "General"
+			"name": "Transforming"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
