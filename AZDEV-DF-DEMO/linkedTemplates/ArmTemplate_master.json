@@ -7,17 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "AZDEV-DF-DEMO"
 		},
-		"LS_ADLS_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS'"
-		},
 		"LS_ABLB_IN_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
-			"defaultValue": "ADL-CONN"
+			"defaultValue": "ABLB-CONN"
 		},
 		"LS_ADLS_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://azdevlakestoragedemo.dfs.core.windows.net"
+			"defaultValue": "https://azdevlakestoragedemo.dfs.core.windows.net/"
 		},
 		"LS_ASQL_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
@@ -54,17 +50,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LS_ADLS_accountKey": {
-						"value": "[parameters('LS_ADLS_accountKey')]"
-					},
-					"LS_ADLS_properties_typeProperties_url": {
-						"value": "[parameters('LS_ADLS_properties_typeProperties_url')]"
-					},
 					"LS_KV_properties_typeProperties_baseUrl": {
 						"value": "[parameters('LS_KV_properties_typeProperties_baseUrl')]"
 					},
 					"LS_ABLB_IN_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('LS_ABLB_IN_properties_typeProperties_connectionString_secretName')]"
+					},
+					"LS_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_properties_typeProperties_url')]"
 					},
 					"LS_ASQL_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('LS_ASQL_properties_typeProperties_connectionString_secretName')]"

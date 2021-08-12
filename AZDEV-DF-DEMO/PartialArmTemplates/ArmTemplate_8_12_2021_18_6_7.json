@@ -6,22 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "AZDEV-DF-DEMO"
-		},
-		"LS_ABLB_IN_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "ABLB-CONN"
-		},
-		"LS_ADLS_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://azdevlakestoragedemo.dfs.core.windows.net/"
-		},
-		"LS_ASQL_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "ASQL-CONN"
-		},
-		"LS_KV_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://AZDEV-KV-DEMO.vault.azure.net/"
 		}
 	},
 	"variables": {
@@ -411,7 +395,6 @@
 									}
 								}
 							},
-							"staging": {},
 							"compute": {
 								"coreCount": 8,
 								"computeType": "General"
@@ -757,9 +740,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_ASQL')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_ABLB_IN')]",
@@ -775,13 +756,11 @@
 							"referenceName": "LS_KV",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "[parameters('LS_ABLB_IN_properties_typeProperties_connectionString_secretName')]"
+						"secretName": "ABLB-CONN"
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_KV')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_ADLS')]",
@@ -791,7 +770,7 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('LS_ADLS_properties_typeProperties_url')]",
+					"url": "https://azdevlakestoragedemo.dfs.core.windows.net/",
 					"accountKey": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
@@ -801,53 +780,6 @@
 						"secretName": "ADL-CONN"
 					}
 				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_KV')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_ASQL')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "LS_KV",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "[parameters('LS_ASQL_properties_typeProperties_connectionString_secretName')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_KV')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_KV')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('LS_KV_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
 			},
 			"dependsOn": []
 		},
