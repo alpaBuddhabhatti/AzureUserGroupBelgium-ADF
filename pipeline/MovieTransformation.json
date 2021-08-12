@@ -3,48 +3,9 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Data flow - Movie",
-				"type": "ExecuteDataFlow",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataflow": {
-						"referenceName": "TransformationDemo",
-						"type": "DataFlowReference",
-						"datasetParameters": {
-							"MovieDB": {
-								"FileName": {
-									"value": "movieDB.csv",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
-					},
-					"traceLevel": "Fine"
-				}
-			},
-			{
 				"name": "Copy data to Azure SQL",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Data flow - Movie",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -103,6 +64,38 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Data flow - Movie",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "TransformationDemo",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"MovieDB": {
+								"FileName": {
+									"value": "movieDB.csv",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"parameters": {
