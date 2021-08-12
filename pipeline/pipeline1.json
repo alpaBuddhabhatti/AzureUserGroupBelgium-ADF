@@ -48,11 +48,7 @@
 				"outputs": [
 					{
 						"referenceName": "DS_ASQL",
-						"type": "DatasetReference",
-						"parameters": {
-							"TableName": "test",
-							"SchemaName": "dbo"
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
