@@ -28,6 +28,18 @@
 									"value": "@pipeline().parameters.Speccode",
 									"type": "Expression"
 								}
+							},
+							"MoviesSink": {
+								"Speccode": {
+									"value": "@pipeline().parameters.Speccode",
+									"type": "Expression"
+								}
+							},
+							"AllData": {
+								"Speccode": {
+									"value": "@pipeline().parameters.Speccode",
+									"type": "Expression"
+								}
 							}
 						}
 					},
