@@ -130,7 +130,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DS_ADLS_SINK1",
+									"referenceName": "DS_ADLS",
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
