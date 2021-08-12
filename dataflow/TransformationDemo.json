@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DS_ADLS",
+						"referenceName": "DS_ADLS_STAGING",
 						"type": "DatasetReference"
 					},
 					"name": "MovieDB"

@@ -99,7 +99,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS",
+						"referenceName": "DS_ADLS_STAGING",
 						"type": "DatasetReference",
 						"parameters": {
 							"FileName": {
