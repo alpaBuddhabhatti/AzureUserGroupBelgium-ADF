@@ -12,7 +12,13 @@
 						"referenceName": "Loading",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"specdode": {
+							"value": "@pipeline().parameters.speccode",
+							"type": "Expression"
+						}
+					}
 				}
 			},
 			{
@@ -32,7 +38,17 @@
 						"referenceName": "MovieTransformation",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"FileName": {
+							"value": "@pipeline().parameters.FileName",
+							"type": "Expression"
+						},
+						"Speccode": {
+							"value": "@pipeline().parameters.speccode",
+							"type": "Expression"
+						}
+					}
 				}
 			},
 			{
