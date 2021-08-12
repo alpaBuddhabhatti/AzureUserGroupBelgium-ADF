@@ -63,10 +63,12 @@
 		],
 		"parameters": {
 			"FileName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "moviesDB.csv"
 			},
 			"Speccode": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "movie"
 			}
 		},
 		"folder": {
