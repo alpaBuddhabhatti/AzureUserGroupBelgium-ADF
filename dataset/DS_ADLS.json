@@ -8,6 +8,9 @@
 		"parameters": {
 			"FileName": {
 				"type": "string"
+			},
+			"Speccode": {
+				"type": "string"
 			}
 		},
 		"folder": {
