@@ -95,13 +95,9 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_STAGING",
+						"referenceName": "DS_ADLS_SINK",
 						"type": "DatasetReference",
 						"parameters": {
-							"FileName": {
-								"value": "@pipeline().parameters.FileName",
-								"type": "Expression"
-							},
 							"Speccode": {
 								"value": "@pipeline().parameters.speccode",
 								"type": "Expression"
