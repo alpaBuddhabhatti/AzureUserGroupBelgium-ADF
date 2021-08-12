@@ -5,6 +5,11 @@
 			"referenceName": "LS_ABLB_IN",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Loading"
 		},
