@@ -1,5 +1,5 @@
 {
-	"name": "DS_ADLS",
+	"name": "DS_ADLS_SINK",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_ADLS",

@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DS_ADLS",
+						"referenceName": "DS_ADLS_SINK",
 						"type": "DatasetReference"
 					},
 					"name": "MovieDB"
@@ -15,14 +15,14 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DS_ADLS_SINK",
+						"referenceName": "DS_ADLS",
 						"type": "DatasetReference"
 					},
 					"name": "MoviesSink"
 				},
 				{
 					"dataset": {
-						"referenceName": "DS_ADLS_SINK",
+						"referenceName": "DS_ADLS",
 						"type": "DatasetReference"
 					},
 					"name": "AllData"

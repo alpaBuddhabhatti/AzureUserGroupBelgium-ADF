@@ -83,7 +83,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_SINK",
+						"referenceName": "DS_ADLS",
 						"type": "DatasetReference"
 					}
 				],
