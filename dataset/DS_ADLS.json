@@ -25,7 +25,10 @@
 					"value": "@dataset().FileName",
 					"type": "Expression"
 				},
-				"fileSystem": "movie-staging"
+				"fileSystem": {
+					"value": "@concat(dataset().Speccode,'-staging')",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
