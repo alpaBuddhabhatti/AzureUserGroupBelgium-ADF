@@ -63,8 +63,8 @@
 						"referenceName": "DS_ASQL",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "movie",
-							"SchemaName": ".dbo"
+							"TableName": "@replace(pipeline().parameters.FileName,'.csv','')",
+							"SchemaName": "dbo"
 						}
 					}
 				]
