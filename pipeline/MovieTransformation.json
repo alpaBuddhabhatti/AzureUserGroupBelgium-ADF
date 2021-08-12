@@ -5,14 +5,7 @@
 			{
 				"name": "Copy data to Azure SQL",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Data flow - Movie",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -39,6 +32,30 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "Year",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "Rating",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -105,7 +122,7 @@
 		"parameters": {
 			"FileName": {
 				"type": "string",
-				"defaultValue": "RatedMovie.csv"
+				"defaultValue": "RatedMovie"
 			}
 		},
 		"folder": {
