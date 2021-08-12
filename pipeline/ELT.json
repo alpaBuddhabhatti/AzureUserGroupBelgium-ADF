@@ -100,7 +100,17 @@
 				"outputs": [
 					{
 						"referenceName": "DS_ASQL",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": {
+								"value": "@replace(pipeline().parameters.FileName,'.csv','')",
+								"type": "Expression"
+							},
+							"SchemaName": {
+								"value": "@pipeline().parameters.Schema",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
@@ -113,6 +123,10 @@
 			"FileName": {
 				"type": "string",
 				"defaultValue": "RatedMovie.csv"
+			},
+			"Schema": {
+				"type": "string",
+				"defaultValue": "dbo"
 			}
 		},
 		"annotations": [],
