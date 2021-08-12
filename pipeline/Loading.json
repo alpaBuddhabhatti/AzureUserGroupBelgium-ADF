@@ -114,7 +114,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DS_ABLB_SO",
+									"referenceName": "DS_ABLB_IN",
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
