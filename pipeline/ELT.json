@@ -36,7 +36,7 @@
 				}
 			},
 			{
-				"name": "Copy data1",
+				"name": "Copy Data to ASQL",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -84,7 +84,13 @@
 				"inputs": [
 					{
 						"referenceName": "DS_ADLS_SINK",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Speccode": {
+								"value": "@pipeline().parameters.speccode",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -98,7 +104,7 @@
 		"parameters": {
 			"speccode": {
 				"type": "string",
-				"defaultValue": "Movie"
+				"defaultValue": "movie"
 			}
 		},
 		"annotations": [],
