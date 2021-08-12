@@ -99,7 +99,8 @@
 		],
 		"parameters": {
 			"FileName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "moviesDB.csv"
 			}
 		},
 		"folder": {
