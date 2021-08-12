@@ -21,7 +21,11 @@
 						"datasetParameters": {
 							"MovieDB": {
 								"FileName": {
-									"value": "movieDB.csv",
+									"value": "@pipeline().parameters.FileName",
+									"type": "Expression"
+								},
+								"Speccode": {
+									"value": "@pipeline().parameters.Speccode",
 									"type": "Expression"
 								}
 							}
@@ -37,8 +41,10 @@
 		],
 		"parameters": {
 			"FileName": {
-				"type": "string",
-				"defaultValue": "RatedMovie"
+				"type": "string"
+			},
+			"Speccode": {
+				"type": "string"
 			}
 		},
 		"folder": {
