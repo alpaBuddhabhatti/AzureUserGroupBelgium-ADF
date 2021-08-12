@@ -15,10 +15,21 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "Year",
+				"type": "varchar"
+			},
+			{
+				"name": "Rating",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Moviedb"
+			"table": "RatedMovie"
 		}
 	}
 }
