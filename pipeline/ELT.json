@@ -95,11 +95,15 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_SINK",
+						"referenceName": "DS_ADLS",
 						"type": "DatasetReference",
 						"parameters": {
 							"Speccode": {
 								"value": "@pipeline().parameters.speccode",
+								"type": "Expression"
+							},
+							"FileName": {
+								"value": "@pipeline().parameters.FileName",
 								"type": "Expression"
 							}
 						}
