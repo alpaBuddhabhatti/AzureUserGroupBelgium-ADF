@@ -17,7 +17,13 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "DS_ABLB_IN",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"speccode": {
+								"value": "@pipeline().parameters.specdode",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"childItems",
@@ -135,6 +141,12 @@
 				}
 			}
 		],
+		"parameters": {
+			"specdode": {
+				"type": "string",
+				"defaultValue": "movie"
+			}
+		},
 		"folder": {
 			"name": "Loading"
 		},
