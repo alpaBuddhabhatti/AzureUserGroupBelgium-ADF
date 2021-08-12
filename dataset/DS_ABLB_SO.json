@@ -8,6 +8,9 @@
 		"parameters": {
 			"FileName": {
 				"type": "string"
+			},
+			"speccode": {
+				"type": "string"
 			}
 		},
 		"folder": {
@@ -22,7 +25,10 @@
 					"value": "@dataset().FileName",
 					"type": "Expression"
 				},
-				"container": "movie-in"
+				"container": {
+					"value": "@concat(dataset().speccode,'-in')",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
