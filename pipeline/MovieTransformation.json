@@ -27,7 +27,7 @@
 				}
 			},
 			{
-				"name": "Copy data to AZure SQL",
+				"name": "Copy data to Azure SQL",
 				"type": "Copy",
 				"dependsOn": [
 					{
