@@ -120,6 +120,10 @@
 										"FileName": {
 											"value": "@item().name",
 											"type": "Expression"
+										},
+										"speccode": {
+											"value": "@pipeline().parameters.specdode",
+											"type": "Expression"
 										}
 									}
 								}
