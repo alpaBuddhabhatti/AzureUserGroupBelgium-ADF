@@ -5,6 +5,11 @@
 			"referenceName": "LS_ABLB_IN",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"speccode": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Loading"
 		},
@@ -13,7 +18,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "movie-in"
+				"container": {
+					"value": "@concat(dataset().speccode,'-in')",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
