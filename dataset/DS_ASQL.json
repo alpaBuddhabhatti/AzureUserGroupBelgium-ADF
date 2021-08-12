@@ -17,9 +17,12 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "id",
-				"type": "int",
-				"precision": 10
+				"name": "Year",
+				"type": "varchar"
+			},
+			{
+				"name": "Rating",
+				"type": "varchar"
 			}
 		],
 		"typeProperties": {
