@@ -5,7 +5,14 @@
 			{
 				"name": "Copy data to Azure SQL",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Data flow - Movie",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -98,7 +105,7 @@
 		"parameters": {
 			"FileName": {
 				"type": "string",
-				"defaultValue": "Movie.csv"
+				"defaultValue": "RatedMovie.csv"
 			}
 		},
 		"folder": {
