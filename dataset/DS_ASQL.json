@@ -5,28 +5,9 @@
 			"referenceName": "LS_ASQL",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"TableName": {
-				"type": "string"
-			},
-			"SchemaName": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [
-			{
-				"name": "Year",
-				"type": "varchar"
-			},
-			{
-				"name": "Rating",
-				"type": "decimal",
-				"precision": 18,
-				"scale": 0
-			}
-		],
+		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "avgmovie"
