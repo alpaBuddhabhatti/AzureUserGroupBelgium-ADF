@@ -1,17 +1,9 @@
 {
-	"name": "DS_ADLS",
+	"name": "DS_ADLS_SINK",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_ADLS",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"FileName": {
-				"type": "string"
-			},
-			"Speccode": {
-				"type": "string"
-			}
 		},
 		"folder": {
 			"name": "General"
@@ -21,54 +13,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().FileName",
-					"type": "Expression"
-				},
-				"fileSystem": {
-					"value": "@concat(dataset().Speccode,'-staging')",
-					"type": "Expression"
-				}
+				"fileSystem": "movie"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "movie",
-				"type": "String"
-			},
-			{
-				"name": "title",
-				"type": "String"
-			},
-			{
-				"name": "genres",
-				"type": "String"
-			},
-			{
-				"name": "year",
-				"type": "String"
-			},
-			{
-				"name": "Rating",
-				"type": "String"
-			},
-			{
-				"name": "Rotton Tomato",
-				"type": "String"
-			},
-			{
-				"name": "Prop_6",
-				"type": "String"
-			},
-			{
-				"name": "Address",
-				"type": "String"
-			}
-		]
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
